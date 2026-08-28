@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 80">
+ <rect width="160" height="80" rx="12" fill="#fff"/>
+ <g transform="translate(12 10)">
+  <path d="M10 4h14c10 0 17 6 17 15 0 5-2 9-6 12 5 3 8 8 8 14 0 10-8 17-20 17H10V4zm12 12v16h6c5 0 8-3 8-8s-3-8-8-8h-6zm0 27v18h7c6 0 10-3 10-9s-4-9-10-9h-7z" fill="#1f78c8"/>
+  <path d="M20 4h12c8 0 14 4 17 10-4-3-9-5-15-5H20z" fill="#1769aa" opacity=".95"/>
+ </g>
+ <text x="70" y="34" font-family="Arial,sans-serif" font-size="17" font-weight="700" fill="#111">Besant</text>
+ <text x="70" y="54" font-family="Arial,sans-serif" font-size="15" font-weight="700" fill="#111">Technologies</text>
+</svg>

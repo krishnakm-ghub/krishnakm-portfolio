@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Krishna Km | Aspiring Data Analyst</title>
+<meta name="description" content="Krishna Km — Aspiring Data Analyst portfolio with Excel, SQL, Python, Power BI and Tableau projects.">
+<style>
+:root{
+  --bg:#050b09;--panel:#0b1511;--panel2:#0e1c16;--green:#00e676;--green2:#00c853;
+  --mint:#7dffbd;--text:#f4fff8;--muted:#a9bbb1;--line:rgba(0,230,118,.18);
+  --shadow:0 20px 60px rgba(0,0,0,.35);--radius:24px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-2;background:
+radial-gradient(circle at 15% 10%,rgba(0,230,118,.10),transparent 28%),
+radial-gradient(circle at 85% 35%,rgba(0,200,83,.08),transparent 30%),
+radial-gradient(circle at 50% 90%,rgba(0,230,118,.06),transparent 30%)}
+body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.28;background-image:
+linear-gradient(rgba(0,230,118,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,230,118,.035) 1px,transparent 1px);background-size:55px 55px}
+a{color:inherit;text-decoration:none}
+.container{width:min(1180px,92%);margin:auto}
+section{position:relative;padding:110px 0;scroll-margin-top:80px}
+section:before{content:"";position:absolute;inset:0;pointer-events:none;background:
+radial-gradient(circle at 90% 15%,rgba(0,230,118,.06),transparent 25%),
+radial-gradient(circle at 8% 80%,rgba(0,230,118,.045),transparent 24%)}
+.navbar{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(5,11,9,.72);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.nav-inner{height:74px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:22px;font-weight:900;letter-spacing:.3px}.logo span{color:var(--green)}
+.nav{display:flex;gap:26px}.nav a{color:#c9d8d0;font-size:14px;font-weight:700;transition:.25s}.nav a:hover,.nav a.active{color:var(--green)}
+.menu{display:none;background:none;border:1px solid var(--line);color:white;border-radius:12px;padding:8px 11px;font-size:20px}
+.hero{min-height:100vh;display:flex;align-items:center;padding-top:130px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:70px;align-items:center}
+.kicker{color:var(--green);font-size:13px;font-weight:900;letter-spacing:4px;margin-bottom:16px}
+h1{font-size:clamp(48px,7vw,86px);line-height:.98;letter-spacing:-3px}
+.hero h1 em{color:var(--green);font-style:normal}
+.role{font-size:clamp(24px,3vw,38px);margin:22px 0;color:#d8efe2}.typed{color:var(--green);border-right:2px solid var(--green);padding-right:6px}
+.hero p{max-width:640px;color:var(--muted);font-size:18px;line-height:1.8}
+.buttons{display:flex;gap:14px;flex-wrap:wrap;margin:32px 0}.btn{display:inline-flex;align-items:center;gap:9px;padding:14px 20px;border-radius:14px;font-weight:900;border:1px solid var(--line);transition:.3s}
+.btn.primary{background:linear-gradient(135deg,var(--green),#00b85c);color:#031008;box-shadow:0 0 30px rgba(0,230,118,.16)}.btn.secondary{background:rgba(255,255,255,.025)}
+.btn:hover{transform:translateY(-4px);box-shadow:0 16px 35px rgba(0,0,0,.25)}
+.socials{display:flex;gap:10px}.socials a{width:44px;height:44px;border:1px solid var(--line);display:grid;place-items:center;border-radius:13px;background:rgba(255,255,255,.025);font-weight:900;color:#d8efe2;transition:.3s}.socials a:hover{color:var(--green);transform:translateY(-4px);border-color:rgba(0,230,118,.5)}
+.profile-wrap{position:relative;display:grid;place-items:center}
+.orbit{position:absolute;width:min(460px,80vw);aspect-ratio:1;border:1px solid rgba(0,230,118,.18);border-radius:50%;animation:spin 16s linear infinite}.orbit:before,.orbit:after{content:"";position:absolute;width:11px;height:11px;background:var(--green);border-radius:50%;box-shadow:0 0 18px var(--green)}.orbit:before{top:18%;left:8%}.orbit:after{bottom:13%;right:8%}
+.profile{width:min(390px,74vw);aspect-ratio:1;object-fit:cover;border-radius:50%;border:4px solid rgba(0,230,118,.75);padding:8px;background:#08110d;box-shadow:0 0 0 14px rgba(0,230,118,.04),0 0 70px rgba(0,230,118,.22);animation:float 5s ease-in-out infinite}
+.badge{position:absolute;bottom:4%;right:2%;background:rgba(8,18,14,.92);border:1px solid var(--line);padding:14px 18px;border-radius:17px;box-shadow:var(--shadow);font-size:13px}.badge b{color:var(--green);display:block;font-size:18px}
+.section-head{text-align:center;margin-bottom:55px}.section-head .kicker{margin-bottom:10px}.section-head h2{font-size:clamp(32px,4vw,48px);letter-spacing:-1px}.section-head p:last-child{color:var(--muted);margin-top:14px}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.glass{background:linear-gradient(145deg,rgba(16,31,24,.94),rgba(8,17,13,.88));border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);position:relative;overflow:hidden}
+.glass:after{content:"";position:absolute;width:180px;height:180px;border-radius:50%;right:-70px;top:-80px;background:rgba(0,230,118,.08);filter:blur(5px)}
+.about-card{padding:38px}.about-card h3{font-size:28px;margin-bottom:18px}.about-card p{color:var(--muted);line-height:1.85;margin-bottom:14px}
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}.stat{padding:18px;border:1px solid var(--line);border-radius:16px;background:rgba(0,230,118,.035)}.stat b{display:block;color:var(--green);font-size:25px}.stat span{font-size:12px;color:var(--muted)}
+.visual-card{padding:26px;display:grid;place-items:center;min-height:100%}
+.data-art{width:100%;height:330px;position:relative;border:1px solid var(--line);border-radius:20px;background:radial-gradient(circle at 78% 18%,rgba(0,230,118,.13),transparent 24%),linear-gradient(180deg,rgba(0,230,118,.055),transparent 58%),repeating-linear-gradient(0deg,transparent 0 49px,rgba(0,230,118,.07) 50px);overflow:hidden;box-shadow:inset 0 0 45px rgba(0,230,118,.035)}
+.data-art:before{content:"LIVE ANALYTICS";position:absolute;left:22px;top:18px;color:rgba(125,255,189,.75);font-size:10px;font-weight:900;letter-spacing:2px}
+.data-art:after{content:"↗  +24.8%";position:absolute;right:20px;top:16px;color:var(--green);font-size:12px;font-weight:900;animation:metricPulse 2.4s ease-in-out infinite}
+.data-art .bar{position:absolute;bottom:42px;width:9%;border-radius:7px 7px 2px 2px;background:linear-gradient(180deg,var(--mint),var(--green2));box-shadow:0 0 22px rgba(0,230,118,.2);transform-origin:bottom;animation:barsPro 2.8s ease-in-out infinite}
+.data-art .b1{left:9%;height:25%}.data-art .b2{left:24%;height:43%;animation-delay:.16s}.data-art .b3{left:39%;height:34%;animation-delay:.32s}.data-art .b4{left:54%;height:63%;animation-delay:.48s}.data-art .b5{left:69%;height:50%;animation-delay:.64s}.data-art .b6{left:84%;height:73%;animation-delay:.80s}
+.chart-line{position:absolute;left:7%;right:7%;top:24%;height:45%;background:linear-gradient(90deg,transparent 0 3%,var(--green) 3% 3.4%,transparent 3.4% 100%);clip-path:polygon(0 72%,15% 54%,29% 64%,43% 30%,57% 43%,71% 18%,85% 34%,100% 5%,100% 7%,85% 38%,71% 22%,57% 47%,43% 34%,29% 68%,15% 58%,0 76%);filter:drop-shadow(0 0 8px rgba(0,230,118,.8));animation:lineGlow 2.6s ease-in-out infinite}
+.data-art .point{position:absolute;width:9px;height:9px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 5px rgba(0,230,118,.08),0 0 18px var(--green);animation:pointPulse 1.8s ease-in-out infinite}
+.data-art .p1{left:18%;top:43%;animation-delay:.1s}.data-art .p2{left:32%;top:51%;animation-delay:.3s}.data-art .p3{left:46%;top:31%;animation-delay:.5s}.data-art .p4{left:60%;top:38%;animation-delay:.7s}.data-art .p5{left:74%;top:24%;animation-delay:.9s}.data-art .p6{left:89%;top:14%;animation-delay:1.1s}
+.data-art .axis{position:absolute;left:7%;right:7%;bottom:42px;height:1px;background:rgba(125,255,189,.18)}
+.data-art .scan{position:absolute;top:42px;bottom:42px;width:2px;background:linear-gradient(transparent,var(--green),transparent);box-shadow:0 0 16px var(--green);opacity:.45;animation:scan 4.5s linear infinite}
+@keyframes barsPro{0%,100%{transform:scaleY(.88);filter:brightness(.92)}50%{transform:scaleY(1.08);filter:brightness(1.22)}}
+@keyframes pointPulse{0%,100%{transform:scale(.8);opacity:.65}50%{transform:scale(1.25);opacity:1}}
+@keyframes lineGlow{0%,100%{filter:drop-shadow(0 0 5px rgba(0,230,118,.45))}50%{filter:drop-shadow(0 0 13px rgba(0,230,118,.95))}}
+@keyframes scan{0%{left:8%}100%{left:91%}}
+@keyframes metricPulse{0%,100%{opacity:.55;transform:translateY(0)}50%{opacity:1;transform:translateY(-2px)}}
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.skill{padding:28px}.skill-top{display:flex;align-items:center;gap:16px}.skill-logo{width:58px;height:58px;border-radius:16px;display:grid;place-items:center;font-weight:1000;font-size:17px;background:#09140f;border:1px solid var(--line);color:var(--green);box-shadow:inset 0 0 20px rgba(0,230,118,.04)}.skill h3{font-size:19px}.skill p{color:var(--muted);font-size:13px;line-height:1.65;margin:14px 0 18px}.meter{height:7px;background:#14231b;border-radius:20px;overflow:hidden}.meter span{display:block;height:100%;width:var(--w);background:linear-gradient(90deg,var(--green2),var(--mint));border-radius:20px;transform:scaleX(0);transform-origin:left;transition:1.3s ease}.skill.show .meter span{transform:scaleX(1)}
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.project{overflow:hidden;transition:.35s}.project:hover{transform:translateY(-10px);border-color:rgba(0,230,118,.45)}
+.project-cover{height:190px;padding:25px;display:flex;align-items:flex-end;position:relative;overflow:hidden;background:linear-gradient(135deg,#0b2b1b,#08120e)}
+.project-cover:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 75% 25%,rgba(0,230,118,.24),transparent 35%),linear-gradient(120deg,transparent 35%,rgba(0,230,118,.08) 36%,transparent 37%);background-size:auto,22px 22px}
+.cover-icon{position:relative;width:65px;height:65px;border-radius:18px;background:rgba(0,230,118,.12);border:1px solid rgba(0,230,118,.35);display:grid;place-items:center;color:var(--green);font-size:25px;font-weight:1000}
+.project-body{padding:25px}.label{font-size:11px;letter-spacing:2px;color:var(--green);font-weight:900}.project h3{font-size:22px;margin:10px 0}.project p{color:var(--muted);line-height:1.7;font-size:14px;min-height:72px}.tags{display:flex;gap:7px;flex-wrap:wrap;margin:18px 0}.tags span{font-size:11px;padding:6px 9px;border:1px solid var(--line);border-radius:9px;color:#cce5d8}.project-link{color:var(--green);font-weight:900;font-size:13px}
+.education-wrap{display:grid;grid-template-columns:.75fr 1.25fr;gap:35px;align-items:stretch}
+.edu-art{min-height:470px;padding:30px;display:flex;align-items:center;justify-content:center;position:relative}.cap{font-size:110px;filter:drop-shadow(0 0 25px rgba(0,230,118,.25));animation:float 4s ease-in-out infinite}.edu-art .rings{position:absolute;inset:14%;border:1px solid var(--line);border-radius:50%;transform:rotate(18deg)}.edu-art .rings:before{content:"";position:absolute;inset:15%;border:1px dashed rgba(0,230,118,.22);border-radius:50%}
+.timeline{position:relative;padding-left:34px}.timeline:before{content:"";position:absolute;left:8px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--green),rgba(0,230,118,.05))}
+.edu{position:relative;padding:0 0 30px 28px}.edu:last-child{padding-bottom:0}.edu-dot{position:absolute;left:-1px;top:5px;width:19px;height:19px;border-radius:50%;background:var(--green);box-shadow:0 0 0 6px rgba(0,230,118,.09),0 0 18px rgba(0,230,118,.4)}.edu small{color:var(--green);font-weight:900;letter-spacing:1px}.edu h3{margin:7px 0;font-size:20px}.edu p,.edu strong{color:var(--muted);font-size:14px;line-height:1.6}
+.certs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.cert{padding:26px;min-height:210px}.cert-head{display:flex;align-items:center;gap:15px}.cert-logo{width:58px;height:58px;border-radius:15px;background:#f4fff8;color:#0a2115;display:grid;place-items:center;font-weight:1000;font-size:14px;box-shadow:0 0 25px rgba(255,255,255,.05)}.cert h3{font-size:17px}.cert p{color:var(--muted);line-height:1.65;font-size:13px;margin-top:18px}.cert small{display:inline-block;margin-top:14px;color:var(--green);font-weight:800}
+.resume{padding:0 0 110px}.resume-box{padding:45px;display:flex;align-items:center;justify-content:space-between;gap:30px;background:linear-gradient(135deg,rgba(0,230,118,.11),rgba(11,25,18,.95));}.resume-box h2{font-size:35px;margin:8px 0}.resume-box p{color:var(--muted)}
+.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:24px}.contact-card{padding:32px}.contact-card h3{font-size:26px;margin-bottom:18px}.contact-card>p{color:var(--muted);line-height:1.7;margin-bottom:22px}.contact-list{display:grid;gap:13px}.contact-item{padding:16px;border:1px solid var(--line);border-radius:15px;background:rgba(0,230,118,.025)}.contact-item small{color:var(--green);font-weight:900}.contact-item a{display:block;margin-top:4px;color:#dff5e8;font-size:14px}
+form{display:grid;gap:13px}input,textarea{width:100%;padding:15px 16px;border-radius:13px;border:1px solid var(--line);background:#08110d;color:white;outline:none;font:inherit}input:focus,textarea:focus{border-color:rgba(0,230,118,.6);box-shadow:0 0 0 3px rgba(0,230,118,.06)}textarea{min-height:150px;resize:vertical}
+footer{border-top:1px solid var(--line);padding:28px 0;color:#8da298;font-size:13px;text-align:center}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}.reveal.show{opacity:1;transform:none}
+.loader{position:fixed;inset:0;background:#030806;display:grid;place-items:center;z-index:2000;transition:.7s}.loader.hide{opacity:0;visibility:hidden}.loader-inner{text-align:center}.loader-logo{font-size:44px;font-weight:1000;color:var(--green);animation:pulse 1.3s infinite}.loader-line{width:210px;height:3px;background:#10251a;margin-top:20px;overflow:hidden;border-radius:10px}.loader-line span{display:block;width:40%;height:100%;background:var(--green);animation:load 1.1s infinite}
+@keyframes spin{to{transform:rotate(360deg)}}@keyframes float{50%{transform:translateY(-10px)}}@keyframes bars{50%{filter:brightness(1.25);transform:scaleY(1.04)}}@keyframes pulse{50%{text-shadow:0 0 30px rgba(0,230,118,.65)}}@keyframes load{from{transform:translateX(-120%)}to{transform:translateX(260%)}}
+@media(max-width:950px){.hero-grid,.about-grid,.education-wrap,.contact-grid{grid-template-columns:1fr}.profile-wrap{order:-1}.projects,.skills-grid,.certs{grid-template-columns:1fr 1fr}.nav{display:none;position:absolute;top:74px;left:4%;right:4%;padding:18px;flex-direction:column;background:#07100c;border:1px solid var(--line);border-radius:16px}.nav.open{display:flex}.menu{display:block}.hero{text-align:center}.hero p{margin:auto}.buttons,.socials{justify-content:center}.education-wrap{gap:20px}}
+@media(max-width:620px){section{padding:82px 0}.projects,.skills-grid,.certs{grid-template-columns:1fr}.stat-grid{grid-template-columns:1fr}.resume-box{flex-direction:column;align-items:flex-start;padding:30px}.hero h1{letter-spacing:-2px}.profile{width:300px}.orbit{width:340px}}
+
+.project-cover{position:relative}
+.project-cover>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.82;transition:transform .6s ease,opacity .4s ease}
+.project:hover .project-cover>img{transform:scale(1.06);opacity:1}
+.project-cover:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(3,10,7,.04),rgba(3,10,7,.72))}
+.project-cover .cover-icon{z-index:2}
+.cert-logo{overflow:hidden;padding:0;background:#f5fff9}
+.cert-logo img{width:100%;height:100%;object-fit:contain;display:block}
+
+/* ===== BRAND LOGOS ===== */
+.skill-logo{overflow:hidden}
+.skill-brand{width:44px;height:44px;object-fit:contain;display:block;flex:none}
+.analytics-mark{display:flex;align-items:flex-end;gap:4px;height:34px;width:34px}
+.analytics-mark i{display:block;width:6px;border-radius:4px 4px 1px 1px;background:linear-gradient(180deg,#7dffbd,#00c853);box-shadow:0 0 10px rgba(0,230,118,.22)}
+.analytics-mark i:nth-child(1){height:12px}.analytics-mark i:nth-child(2){height:19px}.analytics-mark i:nth-child(3){height:26px}.analytics-mark i:nth-child(4){height:33px}
+
+/* ===== CERTIFICATE LOGOS + POPUP ===== */
+.cert-logo{background:#fff;overflow:hidden;padding:9px}
+.cert-logo img{width:100%;height:100%;object-fit:contain;display:block}
+.cert-logo-excel{padding:10px}
+.cert{position:relative;overflow:visible;cursor:pointer;transition:transform .32s ease,border-color .32s ease,box-shadow .32s ease}
+.cert:hover,.cert:focus-within,.cert.is-open{transform:translateY(-6px);border-color:rgba(0,230,118,.55);box-shadow:0 22px 60px rgba(0,0,0,.38),0 0 30px rgba(0,230,118,.08)}
+.cert-hint{margin-top:12px;font-size:10px;letter-spacing:.08em;text-transform:uppercase;font-weight:900;color:var(--green);opacity:.9}
+.cert-preview{position:absolute;z-index:50;left:50%;bottom:calc(100% + 15px);width:min(430px,88vw);padding:10px;border-radius:18px;background:rgba(4,10,7,.98);border:1px solid rgba(0,230,118,.42);box-shadow:0 30px 80px rgba(0,0,0,.62),0 0 36px rgba(0,230,118,.12);opacity:0;visibility:hidden;pointer-events:none;transform:translate(-50%,18px) scale(.88);transform-origin:bottom center;transition:opacity .25s ease,transform .3s cubic-bezier(.2,.8,.2,1),visibility .25s}
+.cert:hover .cert-preview,.cert:focus-within .cert-preview,.cert.is-open .cert-preview{opacity:1;visibility:visible;pointer-events:auto;transform:translate(-50%,0) scale(1)}
+.cert-preview img{width:100%;max-height:360px;object-fit:contain;display:block;border-radius:11px;background:#fff}
+.cert-preview-label{font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--green);font-weight:900;margin:3px 0 8px 4px}
+.cert-preview:after{content:"";position:absolute;bottom:-9px;left:50%;width:17px;height:17px;background:rgba(4,10,7,.98);border-right:1px solid rgba(0,230,118,.42);border-bottom:1px solid rgba(0,230,118,.42);transform:translateX(-50%) rotate(45deg)}
+@media(max-width:620px){
+  .cert-preview{position:fixed;left:50%;top:50%;bottom:auto;width:min(92vw,520px);transform:translate(-50%,-45%) scale(.88)}
+  .cert:hover .cert-preview{transform:translate(-50%,-45%) scale(.88)}
+  .cert:hover .cert-preview,.cert:focus-within .cert-preview,.cert.is-open .cert-preview{transform:translate(-50%,-50%) scale(1)}
+  .cert-preview:after{display:none}
+}
+
+
+.skill-logo .skill-brand-svg{width:44px;height:44px;display:block;flex:none}
+
+</style>
+</head>
+<body>
+<div class="loader"><div class="loader-inner"><div class="loader-logo">KM</div><div>KRISHNA KM · DATA ANALYTICS</div><div class="loader-line"><span></span></div></div></div>
+
+<header class="navbar">
+<div class="container nav-inner">
+<a class="logo" href="#home"><span>〈</span> Krishna Km <span>/〉</span></a>
+<button class="menu" id="menu">☰</button>
+<nav class="nav" id="nav">
+<a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#certifications">Certifications</a><a href="#contact">Contact</a>
+</nav>
+</div>
+</header>
+
+<main>
+<section id="home" class="hero">
+<div class="container hero-grid">
+<div class="hero-copy reveal">
+<div class="kicker">HELLO, I'M</div>
+<h1>Krishna <em>Km</em></h1>
+<div class="role"><span class="typed" id="typed"></span></div>
+<p>Aspiring Data Analyst with a strong foundation in Advanced Excel, SQL and Power BI. I enjoy transforming raw data into clear insights, useful dashboards and better business decisions.</p>
+<div class="buttons">
+<a class="btn primary" href="#projects">Explore My Projects →</a>
+<a class="btn secondary" href="Krishna_Km_Resume.pdf" download>Download Resume ↓</a>
+</div>
+<div class="socials">
+<a href="https://github.com/krishnakm-ghub" target="_blank" rel="noopener">GH</a>
+<a href="https://www.linkedin.com/in/urlkrish/" target="_blank" rel="noopener">in</a>
+<a href="mailto:krishnakm2k03@gmail.com">@</a>
+</div>
+</div>
+<div class="profile-wrap reveal">
+<div class="orbit"></div>
+<img class="profile" src="profile-photo.jpg" alt="Krishna Km">
+<div class="badge"><b>Data Analytics</b>Turning data into insights</div>
+</div>
+</div>
+</section>
+
+<section id="about">
+<div class="container">
+<div class="section-head reveal"><div class="kicker">ABOUT ME</div><h2>Analytical Mind. Business Focus.</h2><p>Building practical data skills through hands-on projects and training.</p></div>
+<div class="about-grid">
+<div class="glass about-card reveal">
+<h3>Hi, I'm Krishna 👋</h3>
+<p>I am an aspiring Data Analyst with a strong foundation in Excel, SQL and Power BI, passionate about turning raw data into meaningful insights.</p>
+<p>Through projects such as the Loan Management System and Quality Tracking & Manufacturing Dashboard, I have developed practical skills in data cleaning, analysis, reporting and dashboard creation.</p>
+<p>I am eager to begin my career in data analytics and contribute to data-driven organizations.</p>
+<div class="stat-grid"><div class="stat"><b>3+</b><span>Featured Projects</span></div><div class="stat"><b>5+</b><span>Core Tools</span></div><div class="stat"><b>2026</b><span>Analytics Training</span></div></div>
+</div>
+<div class="glass visual-card reveal">
+<div class="data-art" aria-label="Animated analytics dashboard chart">
+<div class="scan"></div><div class="chart-line"></div>
+<div class="point p1"></div><div class="point p2"></div><div class="point p3"></div><div class="point p4"></div><div class="point p5"></div><div class="point p6"></div>
+<div class="bar b1"></div><div class="bar b2"></div><div class="bar b3"></div><div class="bar b4"></div><div class="bar b5"></div><div class="bar b6"></div><div class="axis"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="skills">
+<div class="container">
+<div class="section-head reveal"><div class="kicker">EXPERTISE</div><h2>Technical Skills</h2><p>Tools I use to clean, analyze, visualize and communicate data.</p></div>
+<div class="skills-grid">
+<div class="glass skill reveal"><div class="skill-top"><div class="skill-logo"><svg class="skill-brand-svg" viewBox="0 0 64 64" role="img" aria-label="Microsoft Excel logo"><rect x="8" y="8" width="48" height="48" rx="9" fill="#217346"/><path fill="#fff" d="M17 18h12v5h-7v6h6v5h-6v7h7v5H17z"/><path fill="#fff" opacity=".95" d="M34 18h13v5h-7v6h7v5h-7v7h7v5H34z"/><path fill="#33A852" d="M11 13h20v38H11z"/><path fill="#fff" d="M16 19l4.5 9L25 19h6l-7.5 13L31 45h-6l-4.5-9L16 45h-6l7.5-13L10 19z"/></svg></div><h3>Microsoft Excel</h3></div><p>Advanced Excel, Pivot Tables, VLOOKUP/XLOOKUP, functions, dashboards and reporting.</p><div class="meter"><span style="--w:92%"></span></div></div>
+<div class="glass skill reveal"><div class="skill-top"><div class="skill-logo"><svg class="skill-brand-svg" viewBox="0 0 64 64" role="img" aria-label="MySQL logo"><ellipse cx="32" cy="17" rx="19" ry="7" fill="#00758f"/><path d="M13 17v22c0 5 8.5 9 19 9s19-4 19-9V17" fill="#00758f"/><ellipse cx="32" cy="39" rx="19" ry="7" fill="#005b72"/><path d="M19 48c5 5 11 8 18 8 7 0 12-2 16-6" fill="none" stroke="#f29111" stroke-width="3" stroke-linecap="round"/></svg></div><h3>SQL / MySQL</h3></div><p>Queries, JOINs, GROUP BY, CASE statements, aggregate functions and triggers.</p><div class="meter"><span style="--w:86%"></span></div></div>
+<div class="glass skill reveal"><div class="skill-top"><div class="skill-logo"><svg class="skill-brand-svg" viewBox="0 0 64 64" role="img" aria-label="Python logo"><path fill="#3776AB" d="M32 7c-12 0-11 5-11 5v9h11v3H16c-10 0-9 10-9 10s0 10 9 10h6v-9s0-5 5-5h16s5 0 5-5V17s1-10-10-10z"/><circle cx="26" cy="14" r="2.4" fill="#fff"/><path fill="#FFD343" d="M32 57c12 0 11-5 11-5v-9H32v-3h16c10 0 9-10 9-10s0-10-9-10h-6v9s0 5-5 5H21s-5 0-5 5v8s-1 10 10 10z"/><circle cx="38" cy="50" r="2.4" fill="#fff"/></svg></div><h3>Python</h3></div><p>Python fundamentals with practical exposure to data analysis and desktop application development.</p><div class="meter"><span style="--w:76%"></span></div></div>
+<div class="glass skill reveal"><div class="skill-top"><div class="skill-logo"><svg class="skill-brand-svg" viewBox="0 0 64 64" role="img" aria-label="Microsoft Power BI logo"><rect width="64" height="64" rx="14" fill="#111a14"/><g fill="#F2C811"><rect x="14" y="37" width="7" height="13" rx="1"/><rect x="25" y="29" width="7" height="21" rx="1"/><rect x="36" y="21" width="7" height="29" rx="1"/><rect x="47" y="14" width="7" height="36" rx="1"/></g><path d="M11 51h45" stroke="#F2C811" stroke-width="3" stroke-linecap="round"/></svg></div><h3>Power BI</h3></div><p>Interactive dashboards, DAX basics, Power Query, data modeling and business reporting.</p><div class="meter"><span style="--w:88%"></span></div></div>
+<div class="glass skill reveal"><div class="skill-top"><div class="skill-logo"><svg class="skill-brand-svg" viewBox="0 0 64 64" role="img" aria-label="Tableau logo"><rect width="64" height="64" rx="14" fill="#111a14"/><g stroke-linecap="round" stroke-width="3"><path d="M32 10v44M10 32h44" stroke="#6B4CFF"/><path d="M22 14v36M14 22h36" stroke="#00A6E8"/><path d="M42 14v36M14 42h36" stroke="#F5A623"/><path d="M27 20v24M20 27h24" stroke="#E83E8C"/><path d="M37 20v24M20 37h24" stroke="#00BFA5"/></g><circle cx="32" cy="32" r="5" fill="#fff"/></svg></div><h3>Tableau</h3></div><p>Data visualization, dashboards and storytelling with business-focused visuals.</p><div class="meter"><span style="--w:70%"></span></div></div>
+<div class="glass skill reveal"><div class="skill-top"><div class="skill-logo"><svg class="skill-brand-svg" viewBox="0 0 64 64" role="img" aria-label="Data analysis logo"><rect x="8" y="8" width="48" height="48" rx="12" fill="#0b2116"/><path d="M15 48h35" stroke="#00e676" stroke-width="3"/><rect x="18" y="34" width="6" height="11" rx="2" fill="#00e676"/><rect x="28" y="28" width="6" height="17" rx="2" fill="#00e676"/><rect x="38" y="21" width="6" height="24" rx="2" fill="#00e676"/><path d="M17 30l9-7 7 4 12-12" fill="none" stroke="#7dffbd" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M43 15h5v5" fill="none" stroke="#7dffbd" stroke-width="3"/></svg></div><h3>Data Analysis</h3></div><p>Data cleaning, transformation, analysis, visualization, reporting and insight generation.</p><div class="meter"><span style="--w:84%"></span></div></div>
+</div>
+</div>
+</section>
+
+<section id="projects">
+<div class="container">
+<div class="section-head reveal"><div class="kicker">SELECTED WORK</div><h2>Featured Projects</h2><p>Real projects that demonstrate my practical analytics and development skills.</p></div>
+<div class="projects">
+<article class="glass project reveal"><div class="project-cover"><img src="assets/cybercrime.svg" alt="Cyber crime management illustration"><div class="cover-icon">◈</div></div><div class="project-body"><div class="label">PYTHON · DESKTOP</div><h3>Integrated Cyber Crime Management System</h3><p>Python desktop application for managing cyber crime complaints through an integrated complaint-management workflow.</p><div class="tags"><span>Python</span><span>CustomTkinter</span><span>MySQL</span></div><a class="project-link" href="https://github.com/krishnakm-ghub/-cyber-crime-management-system" target="_blank" rel="noopener">View on GitHub ↗</a></div></article>
+<article class="glass project reveal"><div class="project-cover"><img src="assets/excel.svg" alt="Excel quality dashboard illustration"><div class="cover-icon">▥</div></div><div class="project-body"><div class="label">EXCEL · DASHBOARD</div><h3>Quality Tracking & Manufacturing Dashboard</h3><p>Interactive Excel dashboard for production performance, defect rates and quality KPIs using Pivot Tables and dynamic charts.</p><div class="tags"><span>Excel</span><span>Power Query</span><span>Dashboard</span></div><a class="project-link" href="https://github.com/krishnakm-ghub/Quality-Tracking-Dashboard-Excel" target="_blank" rel="noopener">View on GitHub ↗</a></div></article>
+<article class="glass project reveal"><div class="project-cover"><img src="assets/sql.svg" alt="SQL loan database illustration"><div class="cover-icon">◉</div></div><div class="project-body"><div class="label">SQL · MYSQL</div><h3>Loan Management System</h3><p>SQL project using JOINs, CASE statements, aggregate functions, GROUP BY and triggers to analyze loan records.</p><div class="tags"><span>SQL</span><span>MySQL</span><span>Analysis</span></div><a class="project-link" href="https://github.com/krishnakm-ghub/loan-management-sql-project" target="_blank" rel="noopener">View on GitHub ↗</a></div></article>
+</div>
+</div>
+</section>
+
+<section id="education">
+<div class="container">
+<div class="section-head reveal"><div class="kicker">EDUCATION</div><h2>Academic Journey</h2><p>Education and professional training, presented in chronological order.</p></div>
+<div class="education-wrap">
+<div class="glass edu-art reveal"><div class="rings"></div><div class="cap">🎓</div></div>
+<div class="glass" style="padding:38px">
+<div class="timeline">
+<div class="edu reveal"><div class="edu-dot"></div><small>JULY 2025 – JULY 2027</small><h3>Master of Business Administration (MBA)</h3><p>Human Resources Management</p><strong>University of Madras</strong></div>
+<div class="edu reveal"><div class="edu-dot"></div><small>2026</small><h3>Data Analysis Training</h3><p>Advanced Excel, SQL, Power BI, Data Analysis & Visualization</p><strong>Besant Technologies, Chennai</strong></div>
+<div class="edu reveal"><div class="edu-dot"></div><small>2021 – 2024</small><h3>Bachelor of Commerce (B.Com)</h3><p>General Studies</p><strong>Sree Sastha Arts and Science College, Chennai</strong></div>
+<div class="edu reveal"><div class="edu-dot"></div><small>2021</small><h3>Higher Secondary Education</h3><p>Accounting and Business/Management</p><strong>God Son Matriculation Higher Secondary School</strong></div>
+<div class="edu reveal"><div class="edu-dot"></div><small>2019</small><h3>Secondary Education</h3><p>School Education</p><strong>God Son Matriculation Higher Secondary School</strong></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="certifications">
+<div class="container">
+<div class="section-head reveal"><div class="kicker">CERTIFICATIONS</div><h2>Certifications & Training</h2><p>Professional learning listed in my profile.</p></div>
+<div class="certs">
+<div class="glass cert reveal" tabindex="0">
+  <div class="cert-head"><div class="cert-logo"><img src="assets/besant-logo.svg" alt="Besant Technologies logo"></div><h3>Data Analyst Training</h3></div>
+  <p>Hands-on Data Analyst Training covering practical data analysis, Excel, SQL, visualization and reporting.</p><small>Besant Technologies · 2026</small>
+  <div class="cert-hint">Hover / touch to view certificate</div>
+  <div class="cert-preview"><div class="cert-preview-label">Certificate Preview</div><img src="certificates/data-analyst-training.jpg" alt="Besant Technologies Data Analyst Training certificate"></div>
+</div>
+<div class="glass cert reveal" tabindex="0">
+  <div class="cert-head"><div class="cert-logo"><img src="assets/ibm-logo.svg" alt="IBM logo"></div><h3>Artificial Intelligence Fundamentals</h3></div>
+  <p>IBM SkillsBuild learning certificate covering foundational artificial intelligence concepts.</p><small>IBM SkillsBuild</small>
+  <div class="cert-hint">Hover / touch to view certificate</div>
+  <div class="cert-preview"><div class="cert-preview-label">Certificate Preview</div><img src="certificates/ai-fundamentals.png" alt="IBM SkillsBuild Artificial Intelligence Fundamentals certificate"></div>
+</div>
+<div class="glass cert reveal" tabindex="0">
+  <div class="cert-head"><div class="cert-logo"><img src="assets/coursera-logo.svg" alt="Coursera logo"></div><h3>Build a Free Website with WordPress</h3></div>
+  <p>Coursera project certificate for completing a website-building project with WordPress.</p><small>Coursera · 2025</small>
+  <div class="cert-hint">Hover / touch to view certificate</div>
+  <div class="cert-preview"><div class="cert-preview-label">Certificate Preview</div><img src="certificates/wordpress-certificate.png" alt="Coursera WordPress project certificate"></div>
+</div>
+<div class="glass cert reveal" tabindex="0">
+  <div class="cert-head"><div class="cert-logo"><img src="assets/ibm-logo.svg" alt="IBM logo"></div><h3>Getting Started with Artificial Intelligence</h3></div>
+  <p>IBM SkillsBuild introductory learning certificate focused on artificial intelligence.</p><small>IBM SkillsBuild</small>
+  <div class="cert-hint">Hover / touch to view certificate</div>
+  <div class="cert-preview"><div class="cert-preview-label">Certificate Preview</div><img src="certificates/getting-started-ai.png" alt="IBM SkillsBuild Getting Started with Artificial Intelligence certificate"></div>
+</div>
+<div class="glass cert reveal" tabindex="0">
+  <div class="cert-head"><div class="cert-logo cert-logo-excel"><img src="assets/microsoft-logo.svg" alt="Microsoft logo"></div><h3>Getting Started with Microsoft Excel</h3></div>
+  <p>Coursera project certificate for completing a Microsoft Excel learning project.</p><small>Coursera · 2025</small>
+  <div class="cert-hint">Hover / touch to view certificate</div>
+  <div class="cert-preview"><div class="cert-preview-label">Certificate Preview</div><img src="certificates/microsoft-excel-certificate.png" alt="Coursera Getting Started with Microsoft Excel certificate"></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="resume">
+<div class="container">
+<div class="glass resume-box reveal"><div><div class="kicker">MY RESUME</div><h2>Ready to explore my profile?</h2><p>Download my latest resume for a complete overview of my education, skills and projects.</p></div><a class="btn primary" href="Krishna_Km_Resume.pdf" download>Download Resume ↓</a></div>
+</div>
+</section>
+
+<section id="contact">
+<div class="container">
+<div class="section-head reveal"><div class="kicker">CONTACT</div><h2>Let's Connect</h2><p>Open to entry-level data analytics opportunities and meaningful projects.</p></div>
+<div class="contact-grid">
+<div class="glass contact-card reveal"><h3>Get In Touch</h3><p>Have an opportunity, project idea or question? Reach out through any of the channels below.</p><div class="contact-list">
+<div class="contact-item"><small>EMAIL</small><a href="mailto:krishnakm2k03@gmail.com">krishnakm2k03@gmail.com</a></div>
+<div class="contact-item"><small>LINKEDIN</small><a href="https://www.linkedin.com/in/urlkrish/" target="_blank" rel="noopener">linkedin.com/in/urlkrish</a></div>
+<div class="contact-item"><small>GITHUB</small><a href="https://github.com/krishnakm-ghub" target="_blank" rel="noopener">github.com/krishnakm-ghub</a></div>
+<div class="contact-item"><small>LOCATION</small><div style="margin-top:4px;color:#dff5e8;font-size:14px">Chennai, Tamil Nadu, India</div></div>
+</div></div>
+<div class="glass contact-card reveal">
+<h3>Send a Message</h3>
+<form onsubmit="event.preventDefault();alert('Thanks! Please email me directly at krishnakm2k03@gmail.com.');">
+<input required placeholder="Your Name"><input required type="email" placeholder="Your Email"><textarea required placeholder="Your Message"></textarea><button class="btn primary" type="submit">Send Message →</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer>© 2026 Krishna Km · Designed for a professional data analytics portfolio</footer>
+
+<script>
+const loader=document.querySelector('.loader');setTimeout(()=>loader.classList.add('hide'),1000);
+const menu=document.getElementById('menu'),nav=document.getElementById('nav');menu.onclick=()=>nav.classList.toggle('open');
+document.querySelectorAll('.nav a').forEach(a=>a.onclick=()=>nav.classList.remove('open'));
+const words=['Data Analyst','Excel Specialist','SQL Analyst','Power BI Enthusiast'];let wi=0,ci=0,del=false;
+function type(){const el=document.getElementById('typed');const w=words[wi];el.textContent=w.slice(0,ci);if(!del){ci++;if(ci>w.length){del=true;return setTimeout(type,1100)}}else{ci--;if(ci<0){ci=0;del=false;wi=(wi+1)%words.length}}setTimeout(type,del?55:90)}type();
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+const sections=[...document.querySelectorAll('main section[id]')],links=[...document.querySelectorAll('.nav a')];
+window.addEventListener('scroll',()=>{let current='home';sections.forEach(s=>{if(scrollY>=s.offsetTop-180)current=s.id});links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+current))});
+
+// Certificate interaction: desktop hover + touch/click toggle.
+document.querySelectorAll('.cert').forEach(card=>{
+  card.addEventListener('click',()=>{
+    document.querySelectorAll('.cert.is-open').forEach(other=>{if(other!==card)other.classList.remove('is-open')});
+    card.classList.toggle('is-open');
+  });
+});
+document.addEventListener('click',e=>{
+  if(!e.target.closest('.cert')) document.querySelectorAll('.cert.is-open').forEach(c=>c.classList.remove('is-open'));
+});
+
+</script>
+</body>
+</html>
